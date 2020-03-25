@@ -1,0 +1,22 @@
+{
+  "name": "cypress-example",
+  "version": "1.0.0",
+  "description": "Test repository for cypress learning",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "./node_modules/.bin/cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dshaplyko/cypress-example.git"
+  },
+  "author": "dmitryshaplyko@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dshaplyko/cypress-example/issues"
+  },
+  "homepage": "https://github.com/dshaplyko/cypress-example#readme",
+  "devDependencies": {
+    "cypress": "^4.2.0"
+  }
+}
