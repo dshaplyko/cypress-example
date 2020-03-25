@@ -1,7 +1,7 @@
 describe('First cypress test', () => {
 
   it('First one', () => {
-    cy.visit('http://t-notes.herokuapp.com/#/');
+    cy.visit('/');
     cy.get('#getStarted')
       .contains('Get Started')
       .click();
@@ -10,7 +10,7 @@ describe('First cypress test', () => {
   });
 
   it('Second one', () => {
-    cy.visit('http://t-notes.herokuapp.com/#/register');
+    cy.visit('/register');
     cy.get('#form-firstName')
       .type('My First Name')
       .should('have.value', 'My First Name');
