@@ -1,5 +1,9 @@
 describe('First cypress test', () => {
 
+  beforeEach(() => {
+    cy.login();
+  });
+
   it('First one', () => {
     cy.visit('/');
     cy.get('#getStarted')

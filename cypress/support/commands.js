@@ -23,3 +23,24 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('login', () => {
+  const creds = {
+    email: 'test@mail.com',
+    password: 'password'
+  };
+
+  const { body, boundary } = generateForm(creds);
+
+  cy.request({
+    method: 'POST',
+    url: 'https://t-notes.herokuapp.com/restApi/users.json/login/',
+    headers: {
+      accept: "application/json",
+      "Content-Type": `multipart/form-data; boundary=${boundary}`
+    },
+    body: body
+  }).then(response => {
+    window.localStorage.setItem('token', response.body.token);
+  });
+});

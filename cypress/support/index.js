@@ -23,3 +23,20 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   // failing the test
   return false;
 });
+
+global.generateForm = obj => {
+  const boundary = String(Math.random()).slice(2);
+  const boundaryMiddle = '--' + boundary + '\r\n';
+  const boundaryLast = '--' + boundary + '--\r\n';
+  let body = ['\r\n']; 
+  for (var key in obj) {
+    body.push('Content-Disposition: form-data; name="' + key + '"\r\n\r\n' + obj[key] + '\r\n');
+  }
+  
+  body = body.join(boundaryMiddle) + boundaryLast;
+
+  return {
+    body,
+    boundary
+  };
+};
