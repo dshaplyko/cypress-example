@@ -20,5 +20,9 @@ describe('First cypress test', () => {
       .should('have.value', 'My First Name');
   });
 
+  after(() => {
+    cy.logout();
+  });
+
 
 });

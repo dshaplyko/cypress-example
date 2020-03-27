@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://t-notes.herokuapp.com/#/",
+  "baseUrl": "https://t-notes.herokuapp.com/#/",
   "pageLoadTimeout": 180000,
   "reporter": "spec"
 }

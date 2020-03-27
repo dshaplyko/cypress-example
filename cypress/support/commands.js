@@ -44,3 +44,8 @@ Cypress.Commands.add('login', () => {
     window.localStorage.setItem('token', response.body.token);
   });
 });
+
+Cypress.Commands.add('logout', () => {
+  window.localStorage.clear();
+  cy.reload();
+});

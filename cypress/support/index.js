@@ -29,7 +29,8 @@ global.generateForm = obj => {
   const boundaryMiddle = '--' + boundary + '\r\n';
   const boundaryLast = '--' + boundary + '--\r\n';
   let body = ['\r\n']; 
-  for (var key in obj) {
+  
+  for (let key in obj) {
     body.push('Content-Disposition: form-data; name="' + key + '"\r\n\r\n' + obj[key] + '\r\n');
   }
   
